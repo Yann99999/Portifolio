@@ -1,0 +1,81 @@
+header{
+    background: rgba(52,50,50,1);
+    height: 100px;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+header > nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.menu-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+}
+.menu-list > .link{
+    list-style-type: none;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 30px;
+}
+.link > a{
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+.link::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: .1px;
+    background-color: aliceblue;
+    scale: .1;
+    transform-origin: right;
+    transition: scale .5s;
+    margin-top: 2px;
+}
+.link:hover::before{
+    scale: 1.5;
+    transform-origin: left;
+}
+
+@media screen and (min-width: 200px) and (max-width:480px){
+    header{
+        position: absolute;
+        height: 250px;
+    }
+    .logo{
+        display: none;
+    }
+    .menu-list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 5px auto;
+    }
+    .menu-list>.link{
+        margin-top: 30px;
+    }
+}
+@media screen and (min-width: 481px) and (max-width:768px) {
+    .logo{
+        display: none;
+    }
+}
+@media screen and (min-width: 769px) and (max-width:1024px) {
+    .logo{
+        background-color: red;
+        display: block;
+    }
+}
